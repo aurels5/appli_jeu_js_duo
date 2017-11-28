@@ -58,12 +58,13 @@ function affPions(){
     
     
     //une ligne fait 60
+    //coordonnées de base (case 0,1)
     x1=60; y1=0; 
     
     //taille image
     x2=50; y2=50;
     
-    ctx.drawImage(pion_n,0,0,50,50);
+    ctx.drawImage(pion_n,60,0,50,50);
     
     
     // Pions blancs ligne impaire 
