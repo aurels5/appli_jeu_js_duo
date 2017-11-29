@@ -18,6 +18,7 @@
                 width: 600px;
             }
         </style>
+        <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" /> 
     </head>
     <body>
         <canvas id="dames" width="600" height="600">Votre navigateur n'est pas suffisamment récent pour lire canvas.</canvas>
@@ -27,7 +28,7 @@
         <script src="script_plateau_jeu.js"></script>
         
         <script type="text/javascript">
-            // Création du fond du canvas (marron)
+            // Création du fond du canvas (marron #664421)
             ctx.fillStyle="#664421";
             ctx.fillRect(0,0,600,600); // carré plein (x1,y1,largeur,hauteur)
             // strokeRect = contour

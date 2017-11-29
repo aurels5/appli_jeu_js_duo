@@ -59,20 +59,62 @@ function affPions(){
     
     //une ligne fait 60
     //coordonnées de base (case 0,1)
-    x1=60; y1=0; 
+    //x1=60; y1=0; 
+    l=-60; c=-60; //ligne et colonne
+    var abscisses=0;
+    var ordonnees=0;
     
     //taille image
-    x2=50; y2=50;
+    tl=50; th=50;
     
-    ctx.drawImage(pion_n,60,0,50,50);
+    //pour centrer
+    aj=3;
+    l+=3; c+=aj; x2+=aj; y2+=aj;
     
+    //ctx.drawImage(pion_b,l,c,50,50);
+    //ctx.drawImage(pion_b,l+60,c+60,50,50);
+    
+    for(var i=1; i<=4; i++){ //les lignes
+         for(var j=1; j<=5; j++){ // les colonnes
+                   abscisses=j*2*60;
+                   ordonnees=i*60;
+                   ctx.drawImage(pion_b,l+abscisses+ordonnees,tl,th); //img,x,y,larg,haut
+         }
+         abscisses-=60;//quand on change de ligne
+    }
+ 
+    
+    document.onkeydown = function(event){
+        keyCode = event.keyCode;
+        switch(keyCode)
+        {
+            case 37: // Flèche gauche
+                   ctx.fillStyle="#664421"; //(marron #664421)
+                   ctx.fillRect(l,c,50,50); //clearRect(x, y, largeur, hauteur); //sélectionner ce pion-là (l,c)
+
+            
+            break;
+
+            case 39: // Flèche droite
+
+            break;
+
+            case 38: // Flèche haut
+
+            break;
+
+            case 40: // Flèche bas
+
+            break;
+        }      
+    }
     
     // Pions blancs ligne impaire 
     /* ma ligne à moi test
     for(x=1;x<=2;x++){ //pour x=1 et x=2
         x1=60;
         for(y=1;y<=5;y++){
-            ctx.drawImage(pion_b,x1,y1,x2,y2);// (image,x1,y1,largeur,hauteur)
+            ctx.drawImage(pion_b,l,c,x2,y2);// (image,x1,y1,largeur,hauteur)
             x1=x1+120; // Décalage de 2 cases sur x à chaque fois
         }
         y1=y1+120;
